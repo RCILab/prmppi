@@ -3,518 +3,332 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+
+  <!-- =============================================================
+       PR-MPPI anonymous project page
+       Target venue: IEEE Robotics and Automation Letters (RA-L), Submitted.
+       Keep author/institution information removed for double-anonymous review.
+       Replace the anonymous.4open.science ID after you regenerate it.
+
+       Assets present in static/:
+       Assets expected in static/:
+       - static/images/fig1.png          (PR-MPPI overview from the paper)
+       - static/images/favicon.ico       (optional; reuse the project template icon)
+       - static/pdfs/pr_mppi_paper.pdf
+       - static/videos/overview.mp4      (placeholder)
+       - static/videos/concept.mp4       (placeholder)
+       - static/videos/simulation/*.mp4  (placeholder)
+       - static/videos/real/*.mp4        (placeholder)
+       ============================================================= -->
+
+  <meta name="title" content="Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators">
+  <meta name="description" content="PR-MPPI enforces equality and inequality constraints inside MPPI rollouts through nested velocity projection and retracts the returned command onto the equality manifold to numerical tolerance.">
+  <meta name="keywords" content="model predictive path integral control, constrained control, constraint manifolds, projection, retraction, control barrier functions, dual-arm manipulation, humanoid robots">
+  <meta name="author" content="Anonymous Authors">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
+
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="og:site_name" content="Anonymous Submission">
+  <meta property="og:title" content="Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators">
+  <meta property="og:description" content="PR-MPPI combines equality-tangent projection, inequality correction within that tangent space, and execution-time retraction for hard-constrained manipulation.">
+  <meta property="og:url" content="https://anonymous.4open.science/w/pr-mppi/">
+  <meta property="og:image" content="https://anonymous.4open.science/w/pr-mppi/static/images/fig1.png">
+  <meta property="og:image:alt" content="PR-MPPI project page preview">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Anonymous Authors">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="Constrained Control">
+  <meta property="article:tag" content="Robot Manipulation">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:site" content="@anonymous">
+  <meta name="twitter:creator" content="@anonymous">
+  <meta name="twitter:title" content="Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators">
+  <meta name="twitter:description" content="Exact constraint-manifold control with projection-retraction MPPI.">
+  <meta name="twitter:image" content="https://anonymous.4open.science/w/pr-mppi/static/images/fig1.png">
+  <meta name="twitter:image:alt" content="PR-MPPI project page preview">
 
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
+  <meta name="citation_title" content="Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators">
+  <meta name="citation_author" content="Anonymous, Authors">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_journal_title" content="IEEE Robotics and Automation Letters (RA-L)">
+  <meta name="citation_pdf_url" content="https://anonymous.4open.science/w/pr-mppi/static/pdfs/pr_mppi_paper.pdf">
+
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+  <title>Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators | Project Page</title>
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
+
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
+
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
-  <!-- Fonts - Optimized loading -->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
+
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
+  <script defer src="static/js/index.js?v=2"></script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "headline": "Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators",
+    "description": "PR-MPPI enforces equality and inequality constraints inside MPPI rollouts through nested velocity projection and retracts the returned command onto the equality manifold to numerical tolerance.",
+    "author": [{"@type": "Person", "name": "Anonymous Authors"}],
+    "datePublished": "2026-01-01",
+    "publisher": {"@type": "Organization", "name": "IEEE Robotics and Automation Letters (RA-L), Submitted"},
+    "url": "https://anonymous.4open.science/w/pr-mppi/",
+    "image": "https://anonymous.4open.science/w/pr-mppi/static/images/fig1.png",
+    "keywords": ["model predictive path integral control", "constrained control", "constraint manifolds", "projection", "retraction", "control barrier functions"],
+    "abstract": "Model Predictive Path Integral (MPPI) control is widely used in manipulation for its gradient-free, parallel handling of non-convex costs. Manipulation tasks, however, often impose constraints that hold throughout the motion: a closed kinematic chain that two grasping arms keep exactly, or joint limits and obstacle clearances that are never crossed. MPPI handles such constraints only through the cost, as soft penalties that hold approximately and fail under a strong task cost. To address this, we propose Projection-Retraction MPPI (PR-MPPI), which enforces the constraints inside the sampled dynamics. At every rollout step, the sampled velocity is projected to satisfy both constraint types: the equality restricts it to a subspace, and each inequality to a half-space within that subspace, so inequality handling never breaks the equality. This projection, however, satisfies the constraints only to first order, and a finite step leaves a small drift off the equality. Therefore, we retract the returned command back onto the constraint, to numerical tolerance and independent of task weighting. We validate PR-MPPI on 14-DoF dual-arm systems. In simulation, the returned commands satisfy the closed-chain equality to numerical tolerance through a joint-limit stress test and randomized obstacle avoidance. On real hardware, the arms of a Unitree H1-2 humanoid reactively avoid a moving obstacle.",
+    "citation": "@article{anonymous2026prmppi, title={Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators}, author={Anonymous Authors}, journal={IEEE Robotics and Automation Letters (RA-L)}, note={Submitted}, year={2026}}",
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
+    "license": "https://creativecommons.org/licenses/by/4.0/"
   }
   </script>
 </head>
 <body>
 
-
-  <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+    <!-- ===================== Title ===================== -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title publication-title" style="font-size: clamp(1.45rem, 2.75vw, 2.55rem); line-height: 1.15; letter-spacing: -0.02em;">
+                <span style="display: block; white-space: nowrap;">Projection-Retraction MPPI:</span>
+                <span style="display: block; white-space: nowrap;">Exact Constraint-Manifold Control for Manipulators</span>
+              </h1>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Anonymous Authors</span>
+              </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Submitted to IEEE Robotics and Automation Letters (RA-L)</span>
+              </div>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="static/pdfs/pr_mppi_paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper</span>
                     </a>
                   </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <a class="external-link button is-normal is-rounded is-dark" aria-disabled="true" style="pointer-events: none; opacity: 0.65;">
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
+                      <span>arXiv (Coming Soon)</span>
+                    </a>
                   </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+
+                  <span class="link-block">
+                    <a href="https://anonymous.4open.science/w/pr-mppi/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code &amp; Videos</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <!-- ===================== Overview video (top) ===================== -->
+    <section class="hero teaser">
+      <div class="container is-fluid" style="width: min(96vw, 1280px); max-width: 1280px;">
+        <div class="hero-body" style="padding-left: 0; padding-right: 0;">
+          <h2 class="title is-3 has-text-centered">Overview</h2>
+          <div style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; border-radius: 10px;">
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border: 1px dashed #b5b5b5; background: #fafafa;">
+              <p class="content has-text-centered"><b>[PLACEHOLDER: Overview video / teaser]</b></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
+    </section>
 
+    <!-- ===================== Abstract + fig1 ===================== -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>Model Predictive Path Integral (MPPI) control is widely used in manipulation for its gradient-free, parallel handling of non-convex costs. Manipulation tasks, however, often impose constraints that hold throughout the motion: a closed kinematic chain that two grasping arms keep exactly, or joint limits and obstacle clearances that are never crossed. MPPI handles such constraints only through the cost, as soft penalties that hold approximately and fail under a strong task cost. To address this, we propose <b>Projection-Retraction MPPI (PR-MPPI)</b>, which enforces the constraints inside the sampled dynamics. At every rollout step, the sampled velocity is projected to satisfy both constraint types: the equality restricts it to a subspace, and each inequality to a half-space within that subspace, so inequality handling never breaks the equality. This projection, however, satisfies the constraints only to first order, and a finite step leaves a small drift off the equality. Therefore, we retract the returned command back onto the constraint, to numerical tolerance and independent of task weighting. We validate PR-MPPI on 14-DoF dual-arm systems. In simulation, the returned commands satisfy the closed-chain equality to numerical tolerance through a joint-limit stress test and randomized obstacle avoidance. On real hardware, the arms of a Unitree H1-2 humanoid reactively avoid a moving obstacle.</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+        <div class="columns is-centered">
+          <div class="column is-full has-text-centered">
+            <figure class="image">
+              <img src="static/images/fig1.png" alt="Overview of PR-MPPI projection, cost evaluation, execution projection, and retraction" loading="lazy">
+            </figure>
+            <p class="content has-text-justified" style="margin-top: 0.8rem; line-height: 1.6;">
+              <b>PR-MPPI overview.</b> Sampled control sequences are rolled out through constraint-filtered dynamics. The active constraint filter is applied at every rollout step; after the exponential-weighted MPPI update, the same filter is applied to the first returned input at the measured state, and the resulting finite step is retracted onto the equality manifold.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+    </section>
 
+    <!-- ===================== Contributions (+ concept video placeholder) ===================== -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Contributions</h2>
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content is-size-5" style="line-height: 1.7;">
+              <ul>
+                <li>We propose PR-MPPI, a constrained sampling-based MPC framework in which a single velocity-space projection carries both constraint types: each active inequality is corrected inside the equality tangent subspace, so inequality handling cannot break the equality regardless of which margins are active.</li>
+                <li>We establish execution-layer guarantees: every retracted command satisfies the equality constraint to the prescribed numerical tolerance independently of the MPPI weighting; under the stated regularity and feasibility conditions, the shifted-margin layer is forward invariant, and a safety buffer satisfying the derived finite-step bound preserves the true inequality margins (Proposition 1).</li>
+                <li>We validate PR-MPPI on a 14-DoF dual-arm Franka system in simulation, where the retracted commands satisfy the closed-chain equality to numerical tolerance while the measured trajectories retain the joint-limit and obstacle margins under aggressive task commands, and demonstrate reactive avoidance of a moving obstacle on the dual arms of a Unitree H1-2 humanoid.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+        <div class="columns is-centered">
+          <div class="column is-full has-text-centered">
+            <div style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; border-radius: 10px;">
+              <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border: 1px dashed #b5b5b5; background: #fafafa;">
+                <p class="content has-text-centered"><b>[PLACEHOLDER: Concept / hardware video]</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-<!--End paper poster -->
+    </section>
 
+    <!-- ===================== Method ===================== -->
+    <section class="section is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <h2 class="title is-3 has-text-centered">Method</h2>
+            <div class="content has-text-justified" style="line-height: 1.7;">
+              <p>PR-MPPI incorporates equality and inequality constraints into MPPI through projection and retraction. During each sampled rollout, the perturbed velocity is projected onto the intersection of the equality-constraint tangent space and the active inequality half-spaces. After the MPPI update, the first command is projected again at the current configuration, and the resulting finite-step equality drift is removed by retracting the integrated configuration onto the constraint manifold.</p>
 
+              <h3 class="title is-4" style="margin-top: 2rem;">Problem Definition</h3>
+              <p>The control input is the joint velocity. Over the prediction horizon, MPPI minimizes the expected terminal, running, and control-effort costs while enforcing a configuration-space equality <i>c(q) = 0</i> and inequality margins <i>h(q) &ge; 0</i> under stochastic control perturbations. At every control cycle, perturbed control sequences are rolled out, assigned trajectory costs, and combined by the standard exponential-weighted MPPI update.</p>
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
+              <h3 class="title is-4" style="margin-top: 2rem;">Constraint-Aware Sampled Dynamics</h3>
+              <p>Instead of treating constraints only through penalties, PR-MPPI filters every sampled velocity before it enters the rollout dynamics. The equality constraint defines the manifold <i>M = {q : c(q) = 0}</i>. A sampled velocity is first mapped into the tangent space using the null-space projector <i>N(q) = I - J<sub>c</sub><sup>&dagger;</sup>(q)J<sub>c</sub>(q)</i>. The pseudoinverse is computed with a rank-truncated SVD so that the projector and restoration corrections remain bounded near kinematic singularities.</p>
+              <p>Inequality margins are shifted by a positive safety buffer, <i>h&#772;(q) = h(q) - h<sub>safe</sub></i>, and expressed as first-order control-barrier-function half-spaces. Margins that violate the half-space or lie within an activation band form the rollout active set. The filtered velocity is the minimum-norm projection onto the intersection of the equality tangent space and all active inequality half-spaces. Because each inequality correction is premultiplied by the equality null-space projector, the correction remains inside the equality tangent space.</p>
+
+              <h3 class="title is-4" style="margin-top: 2rem;">Execution-Layer Projection and Retraction</h3>
+              <p>The exponential-weighted MPPI average is formed from the sampled inputs, so the first updated virtual input has not itself passed through the constraint filter. Before actuation, PR-MPPI applies the same equality-and-inequality projection at the measured configuration. The projected velocity satisfies the equality only to first order; integrating it over a finite time step leaves a second-order residual. PR-MPPI therefore initializes the integrated state and applies a truncated Gauss-Newton retraction until the retained equality residual falls below the prescribed tolerance. The resulting retraction map produces the final commanded configuration on the constraint manifold.</p>
+
+              <h3 class="title is-4" style="margin-top: 2rem;">Execution-Layer Guarantees</h3>
+              <p>Under the regularity, feasibility, and local-convergence conditions stated in Proposition 1, every retracted command satisfies the equality constraint to the prescribed numerical tolerance independently of the task cost, MPPI temperature and covariance, and inequality-handling parameters. The proposition also establishes a finite-step bound for the shifted inequality margin, forward invariance of a thin shifted-margin layer, and a sufficient safety buffer for preserving the true inequality margins.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+    </section>
+
+    <!-- ===================== Simulation experiments ===================== -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Simulation Experiments</h2>
+
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <h3 class="title is-4 has-text-centered" style="margin-bottom: 0.75rem;">Joint-Limit Stress Test</h3>
+            <p class="content has-text-centered"><b>[PLACEHOLDER: Experimental setup, comparison videos, quantitative table, and result discussion]</b></p>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 2rem;">
+          <div class="column is-full">
+            <h3 class="title is-4 has-text-centered" style="margin-bottom: 0.75rem;">Randomized Obstacle Avoidance</h3>
+            <p class="content has-text-centered"><b>[PLACEHOLDER: Experimental setup, randomized trials, plots, and result discussion]</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Real-world experiments ===================== -->
+    <section class="section is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Real-World Experiments</h2>
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <h3 class="title is-4 has-text-centered" style="margin-bottom: 0.75rem;">Reactive Avoidance of a Moving Obstacle</h3>
+            <p class="content has-text-centered"><b>[PLACEHOLDER: Unitree H1-2 hardware video, setup details, and result discussion]</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Appendix: Implementation details ===================== -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Appendix: Implementation Details</h2>
+        <div class="content has-text-centered">
+          <p><b>[PLACEHOLDER: Controller frequency, horizon, sample count, covariance, activation bands, safety buffers, SVD threshold, retraction tolerance, cost weights, robot models, and compute platform]</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BibTeX ===================== -->
+    <section class="section is-light" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{anonymous2026prmppi,
+  title={Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators},
+  author={Anonymous Authors},
+  journal={IEEE Robotics and Automation Letters (RA-L)},
+  note={Submitted},
+  year={2026},
+  url={https://anonymous.4open.science/w/pr-mppi/}
 }</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
       </div>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </main>
+</body>
+</html>

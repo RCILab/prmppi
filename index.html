@@ -94,6 +94,30 @@
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js?v=2"></script>
 
+  <!-- MathJax: render LaTeX notation inline without forcing line breaks.
+       Use \(...\) or $...$ for inline math; reserve \[...\] / $$...$$ for display equations. -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    /* Keep equations embedded in the surrounding sentence. */
+    .content mjx-container[jax="CHTML"][display="false"] {
+      display: inline-block !important;
+      margin: 0 0.06em;
+      white-space: nowrap;
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -247,11 +271,11 @@
               <p>PR-MPPI incorporates equality and inequality constraints into MPPI through projection and retraction. During each sampled rollout, the perturbed velocity is projected onto the intersection of the equality-constraint tangent space and the active inequality half-spaces. After the MPPI update, the first command is projected again at the current configuration, and the resulting finite-step equality drift is removed by retracting the integrated configuration onto the constraint manifold.</p>
 
               <h3 class="title is-4" style="margin-top: 2rem;">Problem Definition</h3>
-              <p>The control input is the joint velocity. Over the prediction horizon, MPPI minimizes the expected terminal, running, and control-effort costs while enforcing a configuration-space equality <i>c(q) = 0</i> and inequality margins <i>h(q) &ge; 0</i> under stochastic control perturbations. At every control cycle, perturbed control sequences are rolled out, assigned trajectory costs, and combined by the standard exponential-weighted MPPI update.</p>
+              <p>The control input is the joint velocity. Over the prediction horizon, MPPI minimizes the expected terminal, running, and control-effort costs while enforcing a configuration-space equality \(c(q)=0\) and inequality margins \(h(q)\ge 0\) under stochastic control perturbations. At every control cycle, perturbed control sequences are rolled out, assigned trajectory costs, and combined by the standard exponential-weighted MPPI update.</p>
 
               <h3 class="title is-4" style="margin-top: 2rem;">Constraint-Aware Sampled Dynamics</h3>
-              <p>Instead of treating constraints only through penalties, PR-MPPI filters every sampled velocity before it enters the rollout dynamics. The equality constraint defines the manifold <i>M = {q : c(q) = 0}</i>. A sampled velocity is first mapped into the tangent space using the null-space projector <i>N(q) = I - J<sub>c</sub><sup>&dagger;</sup>(q)J<sub>c</sub>(q)</i>. The pseudoinverse is computed with a rank-truncated SVD so that the projector and restoration corrections remain bounded near kinematic singularities.</p>
-              <p>Inequality margins are shifted by a positive safety buffer, <i>h&#772;(q) = h(q) - h<sub>safe</sub></i>, and expressed as first-order control-barrier-function half-spaces. Margins that violate the half-space or lie within an activation band form the rollout active set. The filtered velocity is the minimum-norm projection onto the intersection of the equality tangent space and all active inequality half-spaces. Because each inequality correction is premultiplied by the equality null-space projector, the correction remains inside the equality tangent space.</p>
+              <p>Instead of treating constraints only through penalties, PR-MPPI filters every sampled velocity before it enters the rollout dynamics. The equality constraint defines the manifold \(\mathcal{M}=\{q\mid c(q)=0\}\). A sampled velocity is first mapped into the tangent space using the null-space projector \(N(q)=I-J_c^{\dagger}(q)J_c(q)\). The pseudoinverse is computed with a rank-truncated SVD so that the projector and restoration corrections remain bounded near kinematic singularities.</p>
+              <p>Inequality margins are shifted by a positive safety buffer, \(\bar{h}(q)=h(q)-h_{\mathrm{safe}}\), and expressed as first-order control-barrier-function half-spaces. Margins that violate the half-space or lie within an activation band form the rollout active set. The filtered velocity is the minimum-norm projection onto the intersection of the equality tangent space and all active inequality half-spaces. Because each inequality correction is premultiplied by the equality null-space projector, the correction remains inside the equality tangent space.</p>
 
               <h3 class="title is-4" style="margin-top: 2rem;">Execution-Layer Projection and Retraction</h3>
               <p>The exponential-weighted MPPI average is formed from the sampled inputs, so the first updated virtual input has not itself passed through the constraint filter. Before actuation, PR-MPPI applies the same equality-and-inequality projection at the measured configuration. The projected velocity satisfies the equality only to first order; integrating it over a finite time step leaves a second-order residual. PR-MPPI therefore initializes the integrated state and applies a truncated Gauss-Newton retraction until the retained equality residual falls below the prescribed tolerance. The resulting retraction map produces the final commanded configuration on the constraint manifold.</p>

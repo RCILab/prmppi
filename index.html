@@ -5,20 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- =============================================================
-       PR-MPPI anonymous project page
+       PR-MPPI anonymous project page.
        Target venue: IEEE Robotics and Automation Letters (RA-L), Submitted.
        Keep author/institution information removed for double-anonymous review.
-       Replace the anonymous.4open.science ID after you regenerate it.
 
-       Assets present in static/:
-       Assets expected in static/:
-       - static/images/fig1.png          (PR-MPPI overview from the paper)
-       - static/images/favicon.ico       (optional; reuse the project template icon)
-       - static/pdfs/pr_mppi_paper.pdf
-       - static/videos/overview.mp4      (placeholder)
-       - static/videos/concept.mp4       (placeholder)
-       - static/videos/simulation/*.mp4  (placeholder)
-       - static/videos/real/*.mp4        (placeholder)
+       Primary assets:
+       - static/images/fig1.png                 (web rendering of Fig. 1)
+       - static/pdfs/pr_mppi_framework.pdf      (vector Fig. 1)
+       - static/pdfs/pr_mppi_paper.pdf          (paper PDF)
        ============================================================= -->
 
   <meta name="title" content="Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators">
@@ -32,8 +26,8 @@
   <meta property="og:site_name" content="Anonymous Submission">
   <meta property="og:title" content="Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators">
   <meta property="og:description" content="PR-MPPI combines equality-tangent projection, inequality correction within that tangent space, and execution-time retraction for hard-constrained manipulation.">
-  <meta property="og:url" content="https://anonymous.4open.science/w/pr-mppi/">
-  <meta property="og:image" content="https://anonymous.4open.science/w/pr-mppi/static/images/fig1.png">
+  <meta property="og:url" content="https://rcilab.github.io/prmppi/">
+  <meta property="og:image" content="https://rcilab.github.io/prmppi/static/images/fig1.png">
   <meta property="og:image:alt" content="PR-MPPI project page preview">
   <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
   <meta property="article:author" content="Anonymous Authors">
@@ -46,14 +40,14 @@
   <meta name="twitter:creator" content="@anonymous">
   <meta name="twitter:title" content="Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators">
   <meta name="twitter:description" content="Exact constraint-manifold control with projection-retraction MPPI.">
-  <meta name="twitter:image" content="https://anonymous.4open.science/w/pr-mppi/static/images/fig1.png">
+  <meta name="twitter:image" content="https://rcilab.github.io/prmppi/static/images/fig1.png">
   <meta name="twitter:image:alt" content="PR-MPPI project page preview">
 
   <meta name="citation_title" content="Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators">
   <meta name="citation_author" content="Anonymous, Authors">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_journal_title" content="IEEE Robotics and Automation Letters (RA-L)">
-  <meta name="citation_pdf_url" content="https://anonymous.4open.science/w/pr-mppi/static/pdfs/pr_mppi_paper.pdf">
+  <meta name="citation_pdf_url" content="https://rcilab.github.io/prmppi/static/pdfs/pr_mppi_paper.pdf">
 
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
@@ -116,6 +110,252 @@
       margin: 0 0.06em;
       white-space: nowrap;
     }
+
+    .overview-card {
+      height: 100%;
+      padding: 1.4rem;
+      border: 1px solid #e6e9ef;
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(22, 34, 51, 0.06);
+    }
+
+    .overview-card .icon {
+      color: #2563eb;
+      margin-bottom: 0.65rem;
+    }
+
+    .content figure.framework-figure {
+      position: static;
+      width: 100%;
+      max-width: 100%;
+      margin: 2rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .framework-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .framework-figure > a {
+      display: block;
+      width: 100%;
+    }
+
+    .framework-figure figcaption {
+      max-width: 960px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .result-table th,
+    .result-table td {
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .result-highlight {
+      margin-top: 1rem;
+      padding: 1rem 1.15rem;
+      border-left: 4px solid #2563eb;
+      border-radius: 6px;
+      background: #f4f7ff;
+    }
+
+    .parameter-card {
+      height: 100%;
+      padding: 1.25rem;
+      border: 1px solid #e6e9ef;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    .cost-function {
+      margin: 1.5rem 0 2.25rem;
+    }
+
+    .cost-function-equations {
+      display: grid;
+      gap: 0.55rem;
+      justify-items: center;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .cost-function-equations > span {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+      padding-bottom: 0.15rem;
+      white-space: nowrap;
+    }
+
+    .cost-function-note {
+      color: #526175;
+      text-align: center;
+    }
+
+    .cost-weight-table {
+      max-width: 760px;
+      margin: 1.5rem auto 0;
+    }
+
+    .cost-weight-table th:not(:first-child),
+    .cost-weight-table td:not(:first-child) {
+      text-align: center;
+    }
+
+    .method-steps {
+      margin: 2rem 0 0 !important;
+      padding: 0;
+      list-style: none !important;
+      counter-reset: method-step;
+    }
+
+    .method-steps > li {
+      position: relative;
+      margin-bottom: 1.6rem;
+      padding-left: 3.25rem;
+      counter-increment: method-step;
+    }
+
+    .method-steps > li::before {
+      position: absolute;
+      top: 0.05rem;
+      left: 0;
+      display: flex;
+      width: 2.2rem;
+      height: 2.2rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 700;
+      content: counter(method-step);
+    }
+
+    .method-steps h3 {
+      margin: 0 0 0.35rem !important;
+      font-size: 1.2rem;
+    }
+
+    .method-steps p {
+      margin-bottom: 0.45rem !important;
+    }
+
+    .method-equation {
+      display: grid;
+      gap: 0.18rem;
+      justify-items: center;
+      padding: 0.25rem 0;
+      text-align: center;
+    }
+
+    .method-equation > span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .method-equation--single {
+      font-size: 0.95rem;
+    }
+
+    .method-outcome {
+      margin: 0.25rem 0 0 3.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #dfe3ea;
+    }
+
+    .experiment-video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .experiment-video-grid--four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .experiment-video-card {
+      margin: 0;
+    }
+
+    .real-world-video {
+      margin-top: 1.5rem;
+    }
+
+    .experiment-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #111111;
+    }
+
+    .experiment-video--square {
+      aspect-ratio: 1 / 1;
+    }
+
+    .experiment-video-card figcaption {
+      margin-top: 0.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    @media screen and (max-width: 768px) {
+      .method-steps > li {
+        padding-left: 2.75rem;
+      }
+
+      .method-steps > li::before {
+        width: 1.9rem;
+        height: 1.9rem;
+      }
+
+      .method-outcome {
+        margin-left: 0;
+      }
+
+      .method-equation {
+        font-size: 0.82rem;
+      }
+
+      .method-equation--single {
+        font-size: 0.72rem;
+      }
+
+      .method-equation--constraints {
+        font-size: 0.63rem;
+      }
+
+      .experiment-video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experiment-video-grid--four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cost-function-equations {
+        font-size: 0.74rem;
+        justify-items: start;
+        text-align: left;
+      }
+
+      .cost-function-note {
+        text-align: left;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -127,8 +367,8 @@
     "author": [{"@type": "Person", "name": "Anonymous Authors"}],
     "datePublished": "2026-01-01",
     "publisher": {"@type": "Organization", "name": "IEEE Robotics and Automation Letters (RA-L), Submitted"},
-    "url": "https://anonymous.4open.science/w/pr-mppi/",
-    "image": "https://anonymous.4open.science/w/pr-mppi/static/images/fig1.png",
+    "url": "https://rcilab.github.io/prmppi/",
+    "image": "https://rcilab.github.io/prmppi/static/images/fig1.png",
     "keywords": ["model predictive path integral control", "constrained control", "constraint manifolds", "projection", "retraction", "control barrier functions"],
     "abstract": "Model Predictive Path Integral (MPPI) control is widely used in manipulation for its gradient-free, parallel handling of non-convex costs. Manipulation tasks, however, often impose constraints that hold throughout the motion: a closed kinematic chain that two grasping arms keep exactly, or joint limits and obstacle clearances that are never crossed. MPPI handles such constraints only through the cost, as soft penalties that hold approximately and fail under a strong task cost. To address this, we propose Projection-Retraction MPPI (PR-MPPI), which enforces the constraints inside the sampled dynamics. At every rollout step, the sampled velocity is projected to satisfy both constraint types: the equality restricts it to a subspace, and each inequality to a half-space within that subspace, so inequality handling never breaks the equality. This projection, however, satisfies the constraints only to first order, and a finite step leaves a small drift off the equality. Therefore, we retract the returned command back onto the constraint, to numerical tolerance and independent of task weighting. We validate PR-MPPI on 14-DoF dual-arm systems. In simulation, the returned commands satisfy the closed-chain equality to numerical tolerance through a joint-limit stress test and randomized obstacle avoidance. On real hardware, the arms of a Unitree H1-2 humanoid reactively avoid a moving obstacle.",
     "citation": "@article{anonymous2026prmppi, title={Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators}, author={Anonymous Authors}, journal={IEEE Robotics and Automation Letters (RA-L)}, note={Submitted}, year={2026}}",
@@ -151,8 +391,8 @@
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title publication-title" style="font-size: clamp(1.45rem, 2.75vw, 2.55rem); line-height: 1.15; letter-spacing: -0.02em;">
-                <span style="display: block; white-space: nowrap;">Projection-Retraction MPPI:</span>
-                <span style="display: block; white-space: nowrap;">Exact Constraint-Manifold Control for Manipulators</span>
+                <span style="display: block;">Projection-Retraction MPPI:</span>
+                <span style="display: block;">Exact Constraint-Manifold Control for Manipulators</span>
               </h1>
 
               <div class="is-size-5 publication-authors">
@@ -194,66 +434,34 @@
       </div>
     </section>
 
-    <!-- ===================== Overview video (top) ===================== -->
+    <!-- ===================== Overview ===================== -->
     <section class="hero teaser">
-      <div class="container is-fluid" style="width: min(96vw, 1280px); max-width: 1280px;">
-        <div class="hero-body" style="padding-left: 0; padding-right: 0;">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
           <h2 class="title is-3 has-text-centered">Overview</h2>
-          <div style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; border-radius: 10px;">
-            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border: 1px dashed #b5b5b5; background: #fafafa;">
-              <p class="content has-text-centered"><b>[PLACEHOLDER: Overview video / teaser]</b></p>
+          <p class="content is-size-5 has-text-centered" style="max-width: 840px; margin: 0 auto 1.5rem; line-height: 1.65;">
+            PR-MPPI optimizes only over motions that respect the local constraint geometry, then retracts the selected finite-step command back onto the equality manifold.
+          </p>
+          <div class="columns is-variable is-5">
+            <div class="column">
+              <div class="overview-card has-text-centered">
+                <span class="icon is-large"><i class="fas fa-project-diagram fa-2x"></i></span>
+                <h3 class="title is-5">Project Every Rollout</h3>
+                <p>Each sampled velocity is restricted to the equality tangent space and the active inequality half-spaces before the state is propagated.</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== Abstract + fig1 ===================== -->
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>Model Predictive Path Integral (MPPI) control is widely used in manipulation for its gradient-free, parallel handling of non-convex costs. Manipulation tasks, however, often impose constraints that hold throughout the motion: a closed kinematic chain that two grasping arms keep exactly, or joint limits and obstacle clearances that are never crossed. MPPI handles such constraints only through the cost, as soft penalties that hold approximately and fail under a strong task cost. To address this, we propose <b>Projection-Retraction MPPI (PR-MPPI)</b>, which enforces the constraints inside the sampled dynamics. At every rollout step, the sampled velocity is projected to satisfy both constraint types: the equality restricts it to a subspace, and each inequality to a half-space within that subspace, so inequality handling never breaks the equality. This projection, however, satisfies the constraints only to first order, and a finite step leaves a small drift off the equality. Therefore, we retract the returned command back onto the constraint, to numerical tolerance and independent of task weighting. We validate PR-MPPI on 14-DoF dual-arm systems. In simulation, the returned commands satisfy the closed-chain equality to numerical tolerance through a joint-limit stress test and randomized obstacle avoidance. On real hardware, the arms of a Unitree H1-2 humanoid reactively avoid a moving obstacle.</p>
+            <div class="column">
+              <div class="overview-card has-text-centered">
+                <span class="icon is-large"><i class="fas fa-shield-alt fa-2x"></i></span>
+                <h3 class="title is-5">Preserve Both Constraint Types</h3>
+                <p>Inequality corrections remain inside the equality tangent space, preventing safety corrections from breaking the closed-chain grasp.</p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="columns is-centered">
-          <div class="column is-full has-text-centered">
-            <figure class="image">
-              <img src="static/images/fig1.png" alt="Overview of PR-MPPI projection, cost evaluation, execution projection, and retraction" loading="lazy">
-            </figure>
-            <p class="content has-text-justified" style="margin-top: 0.8rem; line-height: 1.6;">
-              <b>PR-MPPI overview.</b> Sampled control sequences are rolled out through constraint-filtered dynamics. The active constraint filter is applied at every rollout step; after the exponential-weighted MPPI update, the same filter is applied to the first returned input at the measured state, and the resulting finite step is retracted onto the equality manifold.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== Contributions (+ concept video placeholder) ===================== -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Contributions</h2>
-        <div class="columns is-centered">
-          <div class="column is-full">
-            <div class="content is-size-5" style="line-height: 1.7;">
-              <ul>
-                <li>We propose PR-MPPI, a constrained sampling-based MPC framework in which a single velocity-space projection carries both constraint types: each active inequality is corrected inside the equality tangent subspace, so inequality handling cannot break the equality regardless of which margins are active.</li>
-                <li>We establish execution-layer guarantees: every retracted command satisfies the equality constraint to the prescribed numerical tolerance independently of the MPPI weighting; under the stated regularity and feasibility conditions, the shifted-margin layer is forward invariant, and a safety buffer satisfying the derived finite-step bound preserves the true inequality margins (Proposition 1).</li>
-                <li>We validate PR-MPPI on a 14-DoF dual-arm Franka system in simulation, where the retracted commands satisfy the closed-chain equality to numerical tolerance while the measured trajectories retain the joint-limit and obstacle margins under aggressive task commands, and demonstrate reactive avoidance of a moving obstacle on the dual arms of a Unitree H1-2 humanoid.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="columns is-centered">
-          <div class="column is-full has-text-centered">
-            <div style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; border-radius: 10px;">
-              <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border: 1px dashed #b5b5b5; background: #fafafa;">
-                <p class="content has-text-centered"><b>[PLACEHOLDER: Concept / hardware video]</b></p>
+            <div class="column">
+              <div class="overview-card has-text-centered">
+                <span class="icon is-large"><i class="fas fa-bullseye fa-2x"></i></span>
+                <h3 class="title is-5">Retract the Command</h3>
+                <p>The executed finite step is restored to the equality manifold to the prescribed numerical tolerance, independently of task weighting.</p>
               </div>
             </div>
           </div>
@@ -261,27 +469,95 @@
       </div>
     </section>
 
+    <!-- ===================== Abstract ===================== -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <!-- Verbatim paper abstract, excluding only its final project-page sentence. -->
+              <p>Model Predictive Path Integral (MPPI) control is widely used in manipulation for its gradient-free, parallel handling of non-convex costs. Manipulation tasks, however, often impose constraints that hold throughout the motion: a closed kinematic chain that two grasping arms keep exactly, or joint limits and obstacle clearances that are never crossed. MPPI handles such constraints only through the cost, as soft penalties that hold approximately and fail under a strong task cost. To address this, we propose Projection-Retraction MPPI (PR-MPPI), which enforces the constraints inside the sampled dynamics. At every rollout step, the sampled velocity is projected to satisfy both constraint types: the equality restricts it to a subspace, and each inequality to a half-space within that subspace, so inequality handling never breaks the equality. This projection, however, satisfies the constraints only to first order, and a finite step leaves a small drift off the equality. Therefore, we retract the returned command back onto the constraint, to numerical tolerance and independent of task weighting. We validate PR-MPPI on 14-DoF dual-arm systems. In simulation, the returned commands satisfy the closed-chain equality to numerical tolerance through a joint-limit stress test and randomized obstacle avoidance. On real hardware, the arms of a Unitree H1-2 humanoid reactively avoid a moving obstacle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Contributions (+ concept video placeholder) ===================== -->
+    <section class="section" id="contributions">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Contributions</h2>
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content is-size-5" style="line-height: 1.7;">
+              <ul>
+                <li>We propose PR-MPPI, a constrained sampling-based MPC framework in which a single velocity-space projection carries both constraint types inside the sampled dynamics: each active inequality is corrected within the equality tangent subspace, so inequality handling cannot break the equality regardless of which margins are active. A retraction step then removes the finite-step drift that the first-order projection leaves on the equality, returning the command to satisfy the equality to numerical tolerance.</li>
+                <li>We establish execution-layer guarantees. Every retracted command satisfies the equality constraint to the prescribed numerical tolerance, independent of the MPPI weighting. Under the stated regularity and feasibility conditions, an \(\mathcal{O}(\Delta t)\)-relaxation of the shifted-margin layer is forward invariant, and a safety buffer satisfying the derived finite-step bound preserves the true inequality margins (Remark 1, Proposition 1).</li>
+                <li>We validate PR-MPPI on a 14-DoF dual-arm Franka system in simulation, where the retracted commands satisfy the closed-chain equality to numerical tolerance while the measured trajectories retain the joint-limit and obstacle margins under aggressive task commands, and demonstrate reactive avoidance of a moving obstacle on the dual arms of a Unitree H1-2 humanoid.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== Method ===================== -->
-    <section class="section is-light">
+    <section class="section is-light" id="method">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full">
             <h2 class="title is-3 has-text-centered">Method</h2>
-            <div class="content has-text-justified" style="line-height: 1.7;">
-              <p>PR-MPPI incorporates equality and inequality constraints into MPPI through projection and retraction. During each sampled rollout, the perturbed velocity is projected onto the intersection of the equality-constraint tangent space and the active inequality half-spaces. After the MPPI update, the first command is projected again at the current configuration, and the resulting finite-step equality drift is removed by retracting the integrated configuration onto the constraint manifold.</p>
+            <div class="content has-text-left" style="line-height: 1.7;">
+              <p>PR-MPPI puts equality and inequality constraints inside the sampled dynamics, then restores the executed finite step to the equality manifold.</p>
 
-              <h3 class="title is-4" style="margin-top: 2rem;">Problem Definition</h3>
-              <p>The control input is the joint velocity. Over the prediction horizon, MPPI minimizes the expected terminal, running, and control-effort costs while enforcing a configuration-space equality \(c(q)=0\) and inequality margins \(h(q)\ge 0\) under stochastic control perturbations. At every control cycle, perturbed control sequences are rolled out, assigned trajectory costs, and combined by the standard exponential-weighted MPPI update.</p>
+              <figure class="framework-figure">
+                <a href="static/pdfs/pr_mppi_framework.pdf" target="_blank" aria-label="Open the PR-MPPI framework figure as a PDF">
+                  <img src="static/images/fig1.png" alt="PR-MPPI framework: rollout projection, cost evaluation, execution projection, and retraction" loading="eager">
+                </a>
+                <figcaption class="has-text-left" style="padding: 0.85rem 0.45rem 0.25rem; line-height: 1.6;">
+                  <b>PR-MPPI framework.</b> Every sampled input passes through \(\Pi_{\mathrm{act}}\) before rollout integration. The weighted nominal sequence is filtered again along its own predicted states, and its first finite step is retracted onto \(\mathcal{M}\). The lower panels show tangent projection followed by inequality correction within that tangent space.
+                </figcaption>
+              </figure>
 
-              <h3 class="title is-4" style="margin-top: 2rem;">Constraint-Aware Sampled Dynamics</h3>
-              <p>Instead of treating constraints only through penalties, PR-MPPI filters every sampled velocity before it enters the rollout dynamics. The equality constraint defines the manifold \(\mathcal{M}=\{q\mid c(q)=0\}\). A sampled velocity is first mapped into the tangent space using the null-space projector \(N(q)=I-J_c^{\dagger}(q)J_c(q)\). The pseudoinverse is computed with a rank-truncated SVD so that the projector and restoration corrections remain bounded near kinematic singularities.</p>
-              <p>Inequality margins are shifted by a positive safety buffer, \(\bar{h}(q)=h(q)-h_{\mathrm{safe}}\), and expressed as first-order control-barrier-function half-spaces. Margins that violate the half-space or lie within an activation band form the rollout active set. The filtered velocity is the minimum-norm projection onto the intersection of the equality tangent space and all active inequality half-spaces. Because each inequality correction is premultiplied by the equality null-space projector, the correction remains inside the equality tangent space.</p>
+              <ol class="method-steps">
+                <li>
+                  <h3>Define the constraint geometry</h3>
+                  <p>The equality defines a manifold. With \(\bar h(q)=h(q)-h_{\mathrm{safe}}\), a safety buffer shifts each inequality into a CBF guard condition.</p>
+                  <div class="method-equation method-equation--constraints">
+                    <span>\(\textbf{Equality Constraint:}\; \mathcal{M}=\{q\mid c(q)=0\},\; J_c(q)u=0\)</span>
+                    <span>\(\textbf{Inequality Constraint:}\; J_h(q)u\ge-\Gamma\bar h(q)\)</span>
+                  </div>
+                </li>
+                <li>
+                  <h3>Project every sampled velocity</h3>
+                  <p>Before propagation, each sample is projected onto the equality tangent space and the inequality half-spaces. The solve starts with violating or near-boundary margins, then adds the most violated omitted half-space until every residual is nonpositive.</p>
+                  <div class="method-equation">
+                    <span>\(\begin{aligned}
+                      \Pi_{\mathrm{act}}(q,\tilde u) ={}& \arg\min_u && \tfrac12\lVert u-\tilde u\rVert^2 \\
+                      & \hspace{0.65em}\mathrm{s.t.} && J_c(q)u=0 \\
+                      & && J_h(q)u\ge-\Gamma\bar h(q)
+                    \end{aligned}\)</span>
+                  </div>
+                </li>
+                <li>
+                  <h3>Update and filter the nominal horizon</h3>
+                  <p>MPPI averages the filtered rollout sequences. Because averaging removes their individual guarantees, the entire nominal horizon is filtered again while propagating its own predicted states.</p>
+                  <div class="method-equation">
+                    <span>\(U^*=\sum_{k=1}^{K}w_k\tilde U^{+(k)}\)</span>
+                    <span>\(u_t^\star=\Pi_{\mathrm{act}}(q_t,u_t^*),\qquad t=0,\ldots,T-1\)</span>
+                  </div>
+                </li>
+                <li>
+                  <h3>Retract the executed step</h3>
+                  <p>The first projected step is tangent-feasible but leaves \(\mathcal{O}(\Delta t^2)\) equality drift. Gauss&ndash;Newton retraction removes it to the prescribed tolerance.</p>
+                  <div class="method-equation method-equation--single">
+                    <span>\(q^+=R_{\mathcal{M}}(q_0+\Delta t\,u_0^\star),\qquad \text{such that}\quad \lVert c(q^+)\rVert&lt;\varepsilon_{\mathrm{tol}}\)</span>
+                  </div>
+                </li>
+              </ol>
 
-              <h3 class="title is-4" style="margin-top: 2rem;">Execution-Layer Projection and Retraction</h3>
-              <p>The exponential-weighted MPPI average is formed from the sampled inputs, so the first updated virtual input has not itself passed through the constraint filter. Before actuation, PR-MPPI applies the same equality-and-inequality projection at the measured configuration. The projected velocity satisfies the equality only to first order; integrating it over a finite time step leaves a second-order residual. PR-MPPI therefore initializes the integrated state and applies a truncated Gauss-Newton retraction until the retained equality residual falls below the prescribed tolerance. The resulting retraction map produces the final commanded configuration on the constraint manifold.</p>
-
-              <h3 class="title is-4" style="margin-top: 2rem;">Execution-Layer Guarantees</h3>
-              <p>Under the regularity, feasibility, and local-convergence conditions stated in Proposition 1, every retracted command satisfies the equality constraint to the prescribed numerical tolerance independently of the task cost, MPPI temperature and covariance, and inequality-handling parameters. The proposition also establishes a finite-step bound for the shifted inequality margin, forward invariance of a thin shifted-margin layer, and a sufficient safety buffer for preserving the true inequality margins.</p>
+              <p class="method-outcome"><b>Result.</b> At active-set termination, every inequality half-space is satisfied and the correction remains in the equality tangent space; retraction then makes the commanded equality residual a chosen numerical tolerance.</p>
             </div>
           </div>
         </div>
@@ -294,16 +570,119 @@
         <h2 class="title is-3 has-text-centered">Simulation Experiments</h2>
 
         <div class="columns is-centered">
-          <div class="column is-full">
+          <div class="column is-full" id="experiment-1">
             <h3 class="title is-4 has-text-centered" style="margin-bottom: 0.75rem;">Joint-Limit Stress Test</h3>
-            <p class="content has-text-centered"><b>[PLACEHOLDER: Experimental setup, comparison videos, quantitative table, and result discussion]</b></p>
+            <div class="content has-text-justified" style="line-height: 1.7;">
+              <p>A dual-arm Franka system lowers a level tray from \((0.45,0,1.0)\,\mathrm{m}\) toward an IK target at \((0.45,0,0.55)\,\mathrm{m}\). Both fourth joints start at \(-2.01\,\mathrm{rad}\), while the target \(-2.41\,\mathrm{rad}\) lies beyond the imposed lower bound \(-2.35\,\mathrm{rad}\). A \(0.05\,\mathrm{rad}\) safety margin shifts the guard boundary to \(-2.30\,\mathrm{rad}\), activating both joint-limit constraints nearly simultaneously.</p>
+            </div>
+            <div class="experiment-video-grid" aria-label="Experiment 1 controller comparison videos">
+              <figure class="experiment-video-card">
+                <video class="experiment-video" autoplay muted loop playsinline preload="metadata" poster="static/images/exp1/dq_mppi.jpg" aria-label="DQ-MPPI Experiment 1 video">
+                  <source src="static/videos/exp1/dq_mppi.mp4" type="video/mp4">
+                </video>
+                <figcaption>DQ-MPPI</figcaption>
+              </figure>
+              <figure class="experiment-video-card">
+                <video class="experiment-video" autoplay muted loop playsinline preload="metadata" poster="static/images/exp1/pr_mppi_full.jpg" aria-label="PR-MPPI Full Experiment 1 video">
+                  <source src="static/videos/exp1/pr_mppi_full.mp4" type="video/mp4">
+                </video>
+                <figcaption>PR-MPPI Full</figcaption>
+              </figure>
+            </div>
+            <div class="experiment-video-grid experiment-video-grid--four" aria-label="Experiment 1 result plot videos">
+              <figure class="experiment-video-card">
+                <video class="experiment-video experiment-video--square" autoplay muted loop playsinline preload="metadata" poster="static/images/exp1/left_joint_limit.jpg" aria-label="Left joint limit plot video">
+                  <source src="static/videos/exp1/left_joint_limit.mp4" type="video/mp4">
+                </video>
+                <figcaption>Left Joint Limit</figcaption>
+              </figure>
+              <figure class="experiment-video-card">
+                <video class="experiment-video experiment-video--square" autoplay muted loop playsinline preload="metadata" poster="static/images/exp1/right_joint_limit.jpg" aria-label="Right joint limit plot video">
+                  <source src="static/videos/exp1/right_joint_limit.mp4" type="video/mp4">
+                </video>
+                <figcaption>Right Joint Limit</figcaption>
+              </figure>
+              <figure class="experiment-video-card">
+                <video class="experiment-video experiment-video--square" autoplay muted loop playsinline preload="metadata" poster="static/images/exp1/tilting_angle.jpg" aria-label="Tilting angle plot video">
+                  <source src="static/videos/exp1/tilting_angle.mp4" type="video/mp4">
+                </video>
+                <figcaption>Tilting Angle</figcaption>
+              </figure>
+              <figure class="experiment-video-card">
+                <video class="experiment-video experiment-video--square" autoplay muted loop playsinline preload="metadata" poster="static/images/exp1/tracking_error.jpg" aria-label="Tracking error plot video">
+                  <source src="static/videos/exp1/tracking_error.mp4" type="video/mp4">
+                </video>
+                <figcaption>Tracking Error</figcaption>
+              </figure>
+            </div>
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth is-size-7 result-table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Chain trans. (m)</th>
+                    <th>Chain rot. (rad)</th>
+                    <th>Tilt (rad)</th>
+                    <th>Max. bound viol. (rad)</th>
+                    <th>Compute time (ms)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>DQ-MPPI</td><td>0.004 &plusmn; 0.000</td><td>0.004 &plusmn; 0.001</td><td>0.061 &plusmn; 0.047</td><td>0.082</td><td>238.948 &plusmn; 19.473</td></tr>
+                  <tr class="has-background-link-light"><td><b>PR-MPPI Full</b></td><td>0.003 &plusmn; 0.000</td><td>0.003 &plusmn; 0.000</td><td>0.002 &plusmn; 0.000</td><td><b>0.000</b></td><td>19.351 &plusmn; 1.216</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="result-highlight">Full PR-MPPI uses no joint-limit violation penalty in this experiment. Both fourth joints settle near the shifted guard boundary without crossing the true bound, while the retracted command satisfies every equality channel below \(10^{-9}\).</p>
           </div>
         </div>
 
         <div class="columns is-centered" style="margin-top: 2rem;">
-          <div class="column is-full">
+          <div class="column is-full" id="experiment-2">
             <h3 class="title is-4 has-text-centered" style="margin-bottom: 0.75rem;">Randomized Obstacle Avoidance</h3>
-            <p class="content has-text-centered"><b>[PLACEHOLDER: Experimental setup, randomized trials, plots, and result discussion]</b></p>
+            <div class="content has-text-justified" style="line-height: 1.7;">
+              <p>The level tray moves from \((0.5,0,0.5)\,\mathrm{m}\) to \((0.5,0,1.0)\,\mathrm{m}\) past a spherical obstacle of radius \(0.05\,\mathrm{m}\). Thirty paired obstacle placements sample \(x\in[0.40,0.60]\,\mathrm{m}\) and \(y\in[-0.10,0.10]\,\mathrm{m}\), with every controller evaluated at the same placements. Full PR-MPPI uses a \(0.02\,\mathrm{m}\) tray-obstacle safety margin and no tray-obstacle collision penalty.</p>
+            </div>
+            <div class="experiment-video-grid" aria-label="Experiment 2 controller comparison videos">
+              <figure class="experiment-video-card">
+                <video class="experiment-video" autoplay muted loop playsinline preload="metadata" poster="static/images/exp2/mc_mppi.jpg" aria-label="MC-MPPI Experiment 2 video">
+                  <source src="static/videos/exp2/mc_mppi.mp4" type="video/mp4">
+                </video>
+                <figcaption>MC-MPPI</figcaption>
+              </figure>
+              <figure class="experiment-video-card">
+                <video class="experiment-video" autoplay muted loop playsinline preload="metadata" poster="static/images/exp2/dq_mppi.jpg" aria-label="DQ-MPPI Experiment 2 video">
+                  <source src="static/videos/exp2/dq_mppi.mp4" type="video/mp4">
+                </video>
+                <figcaption>DQ-MPPI</figcaption>
+              </figure>
+              <figure class="experiment-video-card">
+                <video class="experiment-video" autoplay muted loop playsinline preload="metadata" poster="static/images/exp2/pr_mppi_full.jpg" aria-label="PR-MPPI Full Experiment 2 video">
+                  <source src="static/videos/exp2/pr_mppi_full.mp4" type="video/mp4">
+                </video>
+                <figcaption>PR-MPPI Full</figcaption>
+              </figure>
+              <figure class="experiment-video-card">
+                <video class="experiment-video" autoplay muted loop playsinline preload="metadata" poster="static/images/exp2/pr_mppi_exec_only.jpg" aria-label="PR-MPPI execution-only inequality Experiment 2 video">
+                  <source src="static/videos/exp2/pr_mppi_exec_only.mp4" type="video/mp4">
+                </video>
+                <figcaption>PR-MPPI Execution-Only Inequality</figcaption>
+              </figure>
+            </div>
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth result-table">
+                <thead>
+                  <tr><th>Method</th><th>Success / Total</th><th>Stuck</th><th>Tray drop</th><th>Collision</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>MC-MPPI</td><td>13 / 30</td><td>17</td><td>0</td><td>0</td></tr>
+                  <tr><td>DQ-MPPI</td><td>18 / 30</td><td>1</td><td>11</td><td>0</td></tr>
+                  <tr class="has-background-link-light"><td><b>PR-MPPI Full</b></td><td><b>30 / 30</b></td><td>0</td><td>0</td><td>0</td></tr>
+                  <tr><td>PR-MPPI execution-only inequality</td><td>29 / 30</td><td>1</td><td>0</td><td>0</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="result-highlight">Projecting the obstacle inequality inside the rollouts changes which trajectories receive low cost: Full PR-MPPI averages over motions that already pass the obstacle and completes all 30 trials. The execution-only ablation remains safe but has one central-placement stall and roughly twice the goal-dwell-time spread.</p>
           </div>
         </div>
       </div>
@@ -314,9 +693,18 @@
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Real-World Experiments</h2>
         <div class="columns is-centered">
-          <div class="column is-full">
+          <div class="column is-full" id="real-world-experiment">
             <h3 class="title is-4 has-text-centered" style="margin-bottom: 0.75rem;">Reactive Avoidance of a Moving Obstacle</h3>
-            <p class="content has-text-centered"><b>[PLACEHOLDER: Unitree H1-2 hardware video, setup details, and result discussion]</b></p>
+            <div class="content has-text-justified" style="line-height: 1.7;">
+              <p>The two 7-DoF arms of a Unitree H1-2 humanoid hold a loaded tray under the same closed-chain grasp while a person advances a hand-held obstacle from varying directions. The current obstacle position is supplied at every control cycle and held fixed over the rollout horizon, so PR-MPPI replans reactively without an obstacle-motion prediction model.</p>
+              <p>The same sampling&ndash;projection&ndash;retraction pipeline used in simulation is deployed online with only the platform kinematics replaced. The arms reshape their configuration inside the equality tangent space to create clearance, while retraction returns grasp-consistent commands and the measured tray remains level.</p>
+              <p><b>Observed limitation.</b> When the obstacle approaches along a direction for which the closed-chain equality forbids the required retreat, the projected margin gradient \(N\nabla\bar{h}\) becomes small. In that configuration no admissible motion can increase clearance without relaxing the grasp; selectively relaxing the equality is left for future work.</p>
+            </div>
+            <figure class="experiment-video-card real-world-video">
+              <video class="experiment-video" autoplay muted loop playsinline preload="metadata" poster="static/images/exp3.jpg" aria-label="PR-MPPI real-world reactive obstacle avoidance video">
+                <source src="static/videos/exp3.mp4" type="video/mp4">
+              </video>
+            </figure>
           </div>
         </div>
       </div>
@@ -326,8 +714,68 @@
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Appendix: Implementation Details</h2>
-        <div class="content has-text-centered">
-          <p><b>[PLACEHOLDER: Controller frequency, horizon, sample count, covariance, activation bands, safety buffers, SVD threshold, retraction tolerance, cost weights, robot models, and compute platform]</b></p>
+        <div class="cost-function content">
+          <h3 class="title is-4 has-text-centered">Cost Function</h3>
+          <div class="cost-function-equations">
+            <span>\(S(\boldsymbol U)=\displaystyle\sum_{t=0}^{T-1}\!\left[\ell_{\mathrm{track}}(\boldsymbol q_t)+\ell_{\mathrm{coll}}(\boldsymbol q_t)+\ell_{\mathrm{jl}}(\boldsymbol q_t)+w_u\lVert\boldsymbol u_t\rVert_2^2\right]+\phi_{\mathrm{track}}(\boldsymbol q_T)\)</span>
+            <span>\(\ell_{\mathrm{track}}=\begin{cases}w_q\lVert\boldsymbol q-\boldsymbol q_g\rVert_2^2, & \text{Exp. 1},\\ w_p\lVert\boldsymbol p_o-\boldsymbol p_g\rVert_2^2+w_R\!\left(1-\langle\boldsymbol\rho_o,\boldsymbol\rho_g\rangle^2\right), & \text{Exp. 2}.\end{cases}\)</span>
+            <span>\(\ell_{\mathrm{coll}}=\displaystyle\sum_{d_i\in\mathcal D_{\mathrm{coll}}}w_i[\delta_i-d_i(\boldsymbol q)]_+^2,\qquad \mathcal D_{\mathrm{coll}}=\{d_{\mathrm{tray,obs}},d_{\mathrm{arm,obs}},d_{\mathrm{arm,arm}},d_{\mathrm{self}},d_{\mathrm{tray,arm}}\}\)</span>
+            <span>\(\ell_{\mathrm{jl}}=w_{\mathrm{jl}}\displaystyle\sum_j[\delta_{\mathrm{jl}}-d_{\mathrm{jl},j}(\boldsymbol q)]_+^2,\qquad [x]_+=\max(x,0)\)</span>
+          </div>
+          <p class="cost-function-note">The terminal term uses the same tracking residual with terminal weights. Zero-weight terms are inactive (Full PR-MPPI: \(w_{\mathrm{jl}}=0\) in Exp. 1 and \(w_{\mathrm{tray,obs}}=0\) in Exp. 2); the equality \(\boldsymbol c(\boldsymbol q)=0\) is enforced geometrically rather than added as a penalty.</p>
+          <div class="table-container cost-weight-table">
+            <table class="table is-striped is-hoverable is-fullwidth is-size-7 result-table">
+              <thead>
+                <tr><th>Cost term</th><th>Exp. 1</th><th>Exp. 2</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Running tracking</td><td>\(w_q=30{,}000\)</td><td>\(w_p=60,\;w_R=50\)</td></tr>
+                <tr><td>Terminal tracking</td><td>\(w_{q,T}=300{,}000\)</td><td>\(w_{p,T}=500,\;w_{R,T}=50\)</td></tr>
+                <tr><td>Control effort</td><td>\(w_u=0.02\)</td><td>\(w_u=0.02\)</td></tr>
+                <tr><td>Joint limit</td><td>\(w_{\mathrm{jl}}=0\)</td><td>\(w_{\mathrm{jl}}=1{,}000\)</td></tr>
+                <tr><td>Tray&ndash;obstacle</td><td>0 (off)</td><td>0 (Full), 1,800 (Exec-only)</td></tr>
+                <tr><td>Arm&ndash;obstacle</td><td>0 (off)</td><td>1,800</td></tr>
+                <tr><td>Arm&ndash;arm</td><td>1,000</td><td>1,000</td></tr>
+                <tr><td>Intra-arm self</td><td>150</td><td>150</td></tr>
+                <tr><td>Tray&ndash;arm</td><td>0 (off)</td><td>1,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="columns is-variable is-4">
+          <div class="column">
+            <div class="parameter-card content">
+              <h3 class="title is-5">MPPI</h3>
+              <ul>
+                <li>Rollouts: \(K=1000\)</li>
+                <li>Horizon: \(T=30\) steps</li>
+                <li>Time step: \(\Delta t=1/30\,\mathrm{s}\)</li>
+                <li>Exploration: \(\sigma=0.03\,\mathrm{rad/s}\)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="parameter-card content">
+              <h3 class="title is-5">Constraint Layer</h3>
+              <ul>
+                <li>Eight-dimensional closed-chain equality</li>
+                <li>Relative-pose constraint plus tray roll and pitch</li>
+                <li>CBF gain: \(\gamma_i=5\)</li>
+                <li>Projection in rollouts and before execution</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="parameter-card content">
+              <h3 class="title is-5">CUDA Acceleration</h3>
+              <ul>
+                <li>Fused CUDA kernels accelerate rollout projection and inequality correction</li>
+                <li>Batched constraint filtering across \(K\) rollouts</li>
+                <li>Reduced Python dispatch and intermediate tensor overhead</li>
+                <li>NVIDIA RTX 4060 Ti, 8 GB VRAM</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -348,7 +796,7 @@
   journal={IEEE Robotics and Automation Letters (RA-L)},
   note={Submitted},
   year={2026},
-  url={https://anonymous.4open.science/w/pr-mppi/}
+  url={https://rcilab.github.io/prmppi/}
 }</code></pre>
       </div>
     </section>
